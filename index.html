@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/myController.js"></script>
+    <script src="js/myFactory.js"></script>
+</head>
+<body ng-app="app">
+    <div ng-controller="myFirstController">
+        <input type="text" ng-model="name"/>
+        <button ng-click="click()">OK</button>
+        <ul>
+            <li ng-repeat="item in data">Item value=={{item}}<button ng-click="remove(item)">remove</button></li>
+        </ul>
+
+    </div>
+
+</body>
+</html>

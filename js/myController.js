@@ -3,23 +3,15 @@
         $scope.name = "user";
         $scope.data = factoryData();
         $scope.click = function(){
-            for(var i=0;i<$scope.data.length;i++){
-                var someItem = $scope.data[i];
-                if($scope.name !== someItem){
-                } else {
-                    alert("Эрорчик")
-                }
+            if($scope.data.indexOf($scope.name)<0){
+                $scope.data.push($scope.name);
             }
-            $scope.data.push($scope.name);
         };
         $scope.remove = function(item){
-            for(var i=0;i<$scope.data.length;i++){
-                var someItem = $scope.data[i];
-                if(someItem == item){
-                    $scope.data.splice($scope.data.indexOf(someItem),1);
-                }
+            if($scope.data.indexOf(item)>-1){
+                $scope.data.splice($scope.data.indexOf(item),1);
             }
-        }
+        };
     }
     angular.module("app").controller("myFirstController", ["$scope","langFactory", mineController]);
 })();
